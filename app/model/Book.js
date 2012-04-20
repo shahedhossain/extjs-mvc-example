@@ -3,8 +3,21 @@
  */
 Ext.define('Books.model.Book', {
     extend: 'Ext.data.Model',
-    requires: ['Books.model.Review', 'Ext.data.association.HasMany', 'Ext.data.association.BelongsTo'],
+    requires: [
+       'Books.model.Review', 
+       'Ext.data.association.HasMany', 
+       'Ext.data.association.BelongsTo',
+       'Books.data.proxy.LocalRest'
+    ],
 
+    proxy: {
+        type: 'localrest',
+        url : 'resources/json/products',
+        reader: {
+            type: 'json'
+        }
+    },
+    
     fields: [
         'id',
         'name',

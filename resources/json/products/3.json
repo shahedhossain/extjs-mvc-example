@@ -1,0 +1,33 @@
+[
+    {
+        id: 3,
+        name: "Ext JS in Action",
+        author: "Jesus Garcia",
+        detail: "Ext JS, a cross-browser JavaScript library for building Rich Internet Applications (RIA), has emerged from the mix of JavaScript frameworks, libraries and object-oriented development techniques as a one of the clear leaders. Ext JS combines an extensive library of super-high-quality widgets, an intuitive, extensible component model, and an easy-to-use API to create a full, rock-solid platform for JavaScript-based web apps. Ext JS has been adopted by such household names as Adobe, Aetna, Amazon.com, Best Buy Hallmark, Panasonic, Pixar Animation Studios, Siemens, Sony, and Visa.<br /><br />Ext JS in Action teaches the reader about Ext from the ground up. By following the common design patterns demonstrated in the Ext source and in many commercial applications, the book teaches you to achieve the same results you see in world-class commercial JavaScript applications. This book will guide you through the Ext component model and layouts. You'll learn how core components, such as the Container class, serve as building blocks for building complex user interfaces. The book fully covers Ext utility classes, AJAX, Observable (the Ext events model), DOM helpers and Function Helpers and illustrates how use of JavaScript Object Notation (JSON), a powerful and lightweight data format, can allow your application to efficiently communicate over the network to the web server. Finally, you'll build on this foundation to customize or extend Ext widgets.<br /><br />Ext JS in Action assumes that you have a solid foundation in JavaScript, but requires no previous exposure to Ext JS.",
+        price: 30.81,
+        image: "resources/images/books/extjs-in-action.jpg",
+        reviews: [
+            {
+                author: "Deal Stealer",
+                rating: 5,
+                date: "December 16, 2010",
+                title: "Only way to learn ExtJS... At least for me",
+                comment: "I initially thought that Sencha would provide developer manual if I paid a license... NOPE! All I got is sample codes and ExtJS Source. By looking at the example code, I thought 'Wow~ great UI widgets! Code seems pretty easy too'. But, I was not able to understand what ExtJS core library is... Even from the Sencha forum, they suggested that the best way to learn is read the example code... it felt a bit like homeless person kicked out during cold winter. In any case, this book really went in depth of what is ExtJS and how I should program. The 'only' negative that I can think of is that ExtJS 4 is just around the corner to be released.. I believe that's sometime in Feb, 2011. Of course, this is the not the fault of the author! Probably just bad timing. Still, I'm pretty sure Jay will come up w/ new version to cover the ExtJS 4 ^_^. Definitely, going to buy it again~"
+            },
+            {
+                author: "R. Peltz",
+                rating: 5,
+                date: "December 10, 2010",
+                title: "Great documentation!",
+                comment: "This book really fills in the gaps for me in learning Ext JS. I am really impressed with the approach, the examples, and the readability. I've watched J Garcia's videos and vimeo.com, so I was expecting a good book, but I am really pleased with it's completeness. If you are new to Ext JS, or even if you have been using it for a while, this book is a must!"
+            },
+            {
+                author: "John A. Thompson",
+                rating: 5,
+                date: "January 8, 2011",
+                title: "Best Book for ExtJS.",
+                comment: "There are several other ExtJS books out, which I own and have read. This book is by far the best of the options. I met Jay at Senchacon this year and sat through his presentation. Jay has been involved in the ExtJS community for a long time and has been teaching others ExtJS for a long time. In the book he does a great job of presenting ExtJS to the reader. Through his involvement in the ExtJS community, its clear Jay understands common pitfalls that people encounter when learning ExtJS. Jay does a great job of explaining concepts behind ExtJS.<br /><br />If you can by only one book on ExtJS - start here. I lead a small development team & bought copies for each person."
+            }
+        ]
+    }
+]

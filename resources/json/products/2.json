@@ -1,0 +1,26 @@
+[
+    {
+        id: 2,
+        name: "Learning Ext JS 3.2",
+        author: "Shea Frederick, Colin Ramsay & Steve 'Cutter' Blades and Nigel White",
+        detail: "The book provides plenty of fun example code and screenshots to guide you through the creation of examples to assist with learning. By taking a chapter-by-chapter look at each major aspect of the Ext JS framework, the book lets you digest the available features in small, easily understandable chunks, allowing you to start using the library for your development needs immediately. This book is written for Web Application Developers who are familiar with HTML but may have little to no experience with JavaScript application development. If you are starting to build a new web application, or are re-vamping an existing web application, then this book is for you.",
+        price: 38.03,
+        image: "resources/images/books/learning-extjs-32.jpg",
+        reviews: [
+            {
+                author: "R. Chesley",
+                rating: 5,
+                date: "Feburary 10, 2011",
+                title: "Great overview of ExtJS",
+                comment: "I bought the first edition of this book for a project and because of the quality and the addition of more ColdFusion examples picked up this edition. It provides a great overview and supplement to the Ext API documentation with plenty of examples of implemented most of the functionality of Ext (now Sencha). Ext is a deep Javascript framework that is fairly easy to get started with but also a pretty steep learning curve for more complex applications and this book will take you pretty far down the road to mastery.<br /><br />Looking forward to an advanced book that is similar in quality but that provides a more in depth example of how to architect a complex application using the library."
+            },
+            {
+                author: "Peter Kellner",
+                rating: 5,
+                date: "Jan 2, 2011",
+                title: "Great Book! They really got it right on this R2",
+                comment: "Most revision 2's of books I've read are just a little cleaning up and republishing the same stuff just to make some more money. These guys, really put a lot of new material here covering much of what was missing from the first book (partly because it was not out yet in the earlier versions of ExtJS). Things like Ext.Direct and graphing are new and covered well.<br /><br />I strongly recommend this book!"
+            }
+        ]
+    }
+]
