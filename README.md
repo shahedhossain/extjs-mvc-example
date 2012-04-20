@@ -1,7 +1,9 @@
 extjs-mvc-example
 =================
 
-Updated nested-loading example from ExtJS
+Updated nested-loading example from ExtJS.
+
+Put this project in the same parent directory as your ExtJS 4.1 download. eg Downloads/extjs, and Downloads/extjs-mvc-example
 
 A problem with the original example is that it loads all the book data in a single request into the Books store, which isn't practical with a real app because it will be too much data. 
 
