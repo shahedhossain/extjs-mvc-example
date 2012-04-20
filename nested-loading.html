@@ -2,14 +2,25 @@
 <html>
     <head>
         <title>Loading Nested Data Example</title>
-        <link rel="stylesheet" type="text/css" href="../../shared/example.css"/>
+        <link rel="stylesheet" type="text/css" href="shared/example.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/nested-loading.css"/>
 
     <!-- GC -->
+        
+        <script type="text/javascript" src="../extjs-4.1.0-rc3/ext-all-debug.js"></script>
+        <script type="text/javascript" src="overrides.js"></script>
+        
+        <script type="text/javascript">
+            Ext.Loader.setConfig({
+                enabled: true,
+                paths: {
+                    "Books": "app"
+                },
+                disableCaching: false
+            });
+        </script>
+        
 
-
-        <script type="text/javascript" src="../../../ext.js"></script>
-        <script type="text/javascript" src="all-classes.js"></script>
         <script type="text/javascript" src="app.js"></script>
     </head>
 
