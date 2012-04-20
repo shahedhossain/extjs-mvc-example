@@ -36,7 +36,7 @@ Ext.define('Books.controller.Books', {
     
     onSideBarSelectionChange: function(view, records) {
         if (records.length) {
-            this.showBook(records[0]);
+            this.showBook(records[0].get('id'));
         }
     },
     
@@ -47,7 +47,7 @@ Ext.define('Books.controller.Books', {
      */
     onBooksStoreLoad: function(store, records) {
         Ext.defer(function() {
-            if (records.length) {
+            if (records && records.length) {
                 var record = records[0],
                     me = this;
                 
@@ -59,10 +59,27 @@ Ext.define('Books.controller.Books', {
     /**
      * Shows a specified record by binding it to
      */
-    showBook: function(record) {
+    showBook: function(id) {
         var me = this;
         
-        me.getBookView().bind(record);
-        me.getReviewList().bind(record, me.getReviewsStore());
+        me.getBookView().setLoading(true);
+        me.getReviewList().setLoading(true);
+        Ext.ModelManager.getModel('Books.model.Book').load(id, {
+            success: function(record, operation) {
+                //DEBUG pretend to take longer to show load mask
+                Ext.defer(function(){
+                    me.getBookView().bind(record);
+                    me.getReviewList().bind(record, me.getReviewsStore());
+                    me.getBookView().setLoading(false);
+                    me.getReviewList().setLoading(false);
+                }, 500);
+            },
+            failure: function() {
+                Ext.MessageBox.alert('Request Failed', 'Failed to load Book');
+                me.getBookView().setLoading(false);
+                me.getReviewList().setLoading(false);
+            },
+            scope: me
+        });
     }
 });
