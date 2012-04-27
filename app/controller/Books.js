@@ -23,11 +23,6 @@ Ext.define('Books.controller.Books', {
                 selectionchange: me.onSideBarSelectionChange
             }
         });
-        
-        me.getBooksStore().on({
-            scope: me,
-            load : me.onBooksStoreLoad
-        });
     },
     
     onLaunch: function() {
@@ -36,31 +31,35 @@ Ext.define('Books.controller.Books', {
     
     onSideBarSelectionChange: function(view, records) {
         if (records.length) {
-            this.showBook(records[0].get('id'));
+            var url = booksApp.router.generate('booksView', {controller: 'Books', action: 'view', id: records[0].get('id')});
+            Ext.util.History.add(url);
         }
     },
     
     /**
-     * Called when the books store is loaded.
-     * Checks if there are any records, and if there are, it delegates to show the first record
-     * as well as selecting that record in the sidebar
+     * index action. This demo doesn't have an index view, so just select first record
+     * @param config Route config
      */
-    onBooksStoreLoad: function(store, records) {
-        Ext.defer(function() {
-            if (records && records.length) {
-                var record = records[0],
-                    me = this;
-                
-                me.getBookSideBar().getSelectionModel().select(record);
-            }
-        }, 500, this);
+    index: function(config) {
+        var me = this, 
+            store = me.getBookSideBar().getStore();
+        
+        if (store.isLoading()) {
+            store.on('load', function(){
+                me.getBookSideBar().getSelectionModel().select(0);
+            }, me, {single: true});
+        } else {
+            me.getBookSideBar().getSelectionModel().select(0);
+        }
+        
     },
     
     /**
      * Shows a specified record by binding it to
+     * @param config Route config
      */
-    showBook: function(id) {
-        var me = this;
+    view: function(config) {
+        var me = this, id = config.id;
         
         me.getBookView().setLoading(true);
         me.getReviewList().setLoading(true);
@@ -68,6 +67,7 @@ Ext.define('Books.controller.Books', {
             success: function(record, operation) {
                 //DEBUG pretend to take longer to show load mask
                 Ext.defer(function(){
+                    me.getBookSideBar().getSelectionModel().select(record, false, true);
                     me.getBookView().bind(record);
                     me.getReviewList().bind(record, me.getReviewsStore());
                     me.getBookView().setLoading(false);
