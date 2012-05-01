@@ -5,6 +5,8 @@ Updated nested-loading example from ExtJS.
 
 Put this project in the same parent directory as your ExtJS 4.1 download. eg Downloads/extjs, and Downloads/extjs-mvc-example
 
+To enable local ajax without a webserver, open it in Chrome with the --allow-file-access-from-files command line arg
+
 Improvements
 ------------
 
