@@ -5,9 +5,14 @@ Updated nested-loading example from ExtJS.
 
 Put this project in the same parent directory as your ExtJS 4.1 download. eg Downloads/extjs, and Downloads/extjs-mvc-example
 
-A problem with the original example is that it loads all the book data in a single request into the Books store, which isn't practical with a real app because it will be too much data. 
+Improvements
+------------
 
-So in this example the index query only returns the books' names, and the rest of a book's data is queried it's selected. 
+ 1. Original loads all the book data in a single request into the Books store, which is not practical with a real app because it will be too much data. So the index query only returns books' names. The full book data is queried when selected. 
+ 2. Implements Ext.util.History with Router for controller dispatch. See http://www.sencha.com/forum/showthread.php?130694-Executing-MVC-controller-methods 
+
+Note
+------
 
 This example is setup to work locally without a web server. There are a few hacks to accomplish this:
  1. Ext.data.Connection is overridden in overrides.js to accept status code 0 as 200.
